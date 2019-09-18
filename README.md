@@ -5,3 +5,5 @@
 #cd springcloud-gateway-dynamic-route
 
 #mvn clean compile spring-boot:run
+
+详细参考 ：https://blog.csdn.net/happyfreeangel/article/details/100988504
