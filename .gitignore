@@ -1,0 +1,4 @@
+*.jar
+*.jpg
+target/*
+.idea/*
