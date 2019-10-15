@@ -1,0 +1,9 @@
+@startuml
+Alice -> Bob: 授权请求
+Bob --> Alice: 授权响应
+
+Alice -> Bob: Another authentication Request
+Alice <-- Bob: another authentication Response
+@enduml
+
+
