@@ -1,7 +1,7 @@
 @startuml
 skinparam classAttributeIconSize 0
 
-package "class Singleton(单例模式)" #DDDDDD {
+package "class Singleton(单例模式 Singleton Pattern)" #DDDDDD {
 
     class Singleton
     {

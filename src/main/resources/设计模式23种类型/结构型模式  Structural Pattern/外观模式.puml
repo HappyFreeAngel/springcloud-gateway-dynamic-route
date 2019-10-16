@@ -1,7 +1,7 @@
 @startuml
 skinparam classAttributeIconSize 0
 
-package "class Facade(外观模式)" #DDDDDD {
+package "class Facade(外观模式 Façade  Pattern)" #DDDDDD {
     class Facade{
     + operationA()
     + operationB():void

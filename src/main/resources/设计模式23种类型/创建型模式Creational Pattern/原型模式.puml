@@ -1,7 +1,7 @@
 @startuml
 skinparam classAttributeIconSize 0
 
-package "class Protype(原型模式)" #DDDDDD {
+package "class Protype(原型模式 Prototype Pattern)" #DDDDDD {
     class Protype<< (A,#FF7700) interface>>
     {
     +clone()

@@ -1,7 +1,7 @@
 @startuml
 skinparam classAttributeIconSize 0
 
-package "class Comand(命令模式)" #DDDDDD {
+package "class Comand(命令模式 Command  Pattern)" #DDDDDD {
     class Invoker
     {
     -comand:Comand

@@ -1,7 +1,7 @@
 @startuml
 skinparam classAttributeIconSize 0
 
-package "class FactoryMethod(工厂方法模式)" #DDDDDD {
+package "class FactoryMethod(工厂方法模式 Factory Method Pattern)" #DDDDDD {
     abstract class Factory
     {
     +createProduct():Product

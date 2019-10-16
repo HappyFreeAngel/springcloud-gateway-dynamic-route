@@ -1,7 +1,7 @@
 @startuml
 skinparam classAttributeIconSize 0
 
-package "class Flyweight(享元模式)" #DDDDDD {
+package "class Flyweight(享元模式 Flyweight  Pattern)" #DDDDDD {
     class FlyweightFactory{
     - mMap:HashMap
     + getFlyweight()

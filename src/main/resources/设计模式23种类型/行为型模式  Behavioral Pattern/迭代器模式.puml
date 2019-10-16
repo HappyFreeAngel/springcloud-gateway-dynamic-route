@@ -1,7 +1,7 @@
 @startuml
 skinparam classAttributeIconSize 0
 
-package "class Iterator(迭代器模式)" #DDDDDD {
+package "class Iterator(迭代器模式 Iterator  Pattern)" #DDDDDD {
     class Iterator<< (I,#FF7700) interface>>{
     +next():Object
     +hasNext():boolean

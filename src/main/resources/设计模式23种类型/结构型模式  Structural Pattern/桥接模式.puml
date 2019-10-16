@@ -1,7 +1,7 @@
 @startuml
 skinparam classAttributeIconSize 0
 
-package "class Bridge(桥接模式)" #DDDDDD {
+package "class Bridge(桥接模式 Bridge  Pattern)" #DDDDDD {
 
     abstract class Abstraction
     Abstraction : +operation()

@@ -1,7 +1,7 @@
 @startuml
 skinparam classAttributeIconSize 0
 
-package "class Interpreter(解释器模式)" #DDDDDD {
+package "class Interpreter(解释器模式 Interpreter  Pattern)" #DDDDDD {
     abstract class AbstractExpression
     {
     +interpret(context)

@@ -1,7 +1,7 @@
 @startuml
 skinparam classAttributeIconSize 0
 
-package "class State(状态模式)" #DDDDDD {
+package "class State(状态模式 State  Pattern)" #DDDDDD {
     interface State
     {
     +doSomething():void

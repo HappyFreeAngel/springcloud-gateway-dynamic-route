@@ -1,7 +1,7 @@
 @startuml
 skinparam classAttributeIconSize 0
 
-package "class Builder(生成器模式)" #DDDDDD {
+package "class Builder(生成器模式【建造者模式】 Builder Pattern)" #DDDDDD {
     abstract class Builder
     {
     +buildPartA():void

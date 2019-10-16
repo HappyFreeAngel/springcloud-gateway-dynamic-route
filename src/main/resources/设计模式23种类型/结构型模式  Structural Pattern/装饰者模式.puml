@@ -1,7 +1,7 @@
 @startuml
 skinparam classAttributeIconSize 0
 
-package "class Decorator(装饰模式)" #DDDDDD {
+package "class Decorator(装饰模式 Decorator  Pattern)" #DDDDDD {
 
     abstract class Component
     {

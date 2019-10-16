@@ -1,7 +1,7 @@
 @startuml
 skinparam classAttributeIconSize 0
 
-package "class Proxy(代理模式)" #DDDDDD {
+package "class Proxy(代理模式 Proxy  Pattern)" #DDDDDD {
     class Client
 
     abstract class Subject

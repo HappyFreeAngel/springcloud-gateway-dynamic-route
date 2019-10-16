@@ -1,7 +1,7 @@
 @startuml
 skinparam classAttributeIconSize 0
 
-package "class Composite(组合模式)" #DDDDDD {
+package "class Composite(组合模式 Composite  Pattern)" #DDDDDD {
     class Client
 
     abstract class Component{

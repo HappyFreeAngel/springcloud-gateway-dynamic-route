@@ -1,7 +1,7 @@
 @startuml
 skinparam classAttributeIconSize 0
 
-package "class Memento(备忘录模式)" #DDDDDD {
+package "class Memento(备忘录模式 Memento  Pattern)" #DDDDDD {
 
     class Originator
     {

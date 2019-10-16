@@ -1,7 +1,7 @@
 @startuml
 skinparam classAttributeIconSize 0
 
-package "class Visitor(访问者模式)" #DDDDDD {
+package "class Visitor(访问者模式 Visitor  Pattern)" #DDDDDD {
     class Visitor<< (I,#FF7700) abstract>>
     {
     +visitElementA(ElementA):void

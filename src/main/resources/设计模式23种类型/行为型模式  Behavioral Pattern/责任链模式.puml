@@ -1,7 +1,7 @@
 @startuml
 skinparam classAttributeIconSize 0
 
-package "class ChainOfResponsibility(责任链模式)" #DDDDDD {
+package "class ChainOfResponsibility(责任链模式 Chain  of Responsibility Pattern)" #DDDDDD {
     abstract class Handler
     {
     #successor():Handler

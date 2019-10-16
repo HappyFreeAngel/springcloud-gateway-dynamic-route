@@ -1,7 +1,7 @@
 @startuml
 skinparam classAttributeIconSize 0
 
-package "class Observer(观察者模式)" #DDDDDD {
+package "class Observer(观察者模式 Observer  Pattern)" #DDDDDD {
     class Subject<< (A,#FF7700) abstract>>
     {
     +notifyObservers(Object)
