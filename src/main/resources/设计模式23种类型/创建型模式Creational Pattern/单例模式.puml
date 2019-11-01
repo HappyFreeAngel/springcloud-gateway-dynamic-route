@@ -3,12 +3,12 @@ skinparam classAttributeIconSize 0
 
 package "class Singleton(单例模式 Singleton Pattern)" #DDDDDD {
 
-    class Singleton
+    class Singleton2
     {
     +getInstance():Singleton
     -Singleton()
     }
-    note right: 单例类
+    note right: 单例类 展示
 
     Singleton <.. Client
 }

@@ -1,0 +1,129 @@
+@startuml
+'https://www.lucidchart.com/pages/er-diagrams
+' hide the spot
+  hide circle
+ '  类型	   符号
+ '  0 或 1	|o--
+ '   有且只有一个	||--
+ '  0个或多个	}o--
+ '  1个或多个	}|--
+
+' avoid problems with angled crows feet
+
+
+skinparam linetype ortho
+
+entity "PlayOffRound淘汰赛" as e11 {
+ id : number <<generated>>
+  --
+  team1Id : text
+  team2Id : text
+  startTime : date
+  endTime : date
+  roundNum: int
+  e1_id : number <<FK>>
+}
+
+entity "HockeyGame曲棍球游戏" as e12 {
+ id : number <<generated>>
+ roundId : number
+ startTime : date
+ description : text
+ team1Id : text
+ team2Id : text
+}
+
+entity "GameScores游戏分数" as e13 {
+  id : number
+  team1Score : number
+  team2score : number
+}
+
+entity "RoundStats回数统计" as e14 {
+   id : number
+   numShutouts : number
+   goalLeaderId : text
+   assisLeaderId : text
+   penaltyLeaderId : text
+   plusMinusLeaderID : text
+   faceoffsWonLeaderId : text
+   sogLeaderID : text
+}
+
+entity "HockeyTeam曲棍球队" as e15 {
+   id : number
+   name : text
+   logo : text
+}
+
+
+entity "HockeyTeamPlayer曲棍球队队员" as e16 {
+   id : number
+   hockeyTeamID : text
+   firstName : text
+   lastName : text
+   jerseyNum : text
+   position : text
+}
+
+
+entity "UserStatsPicks用户统计信息选择" as e17 {
+    id number
+    roundId : number
+    goalLeaderId : text
+    assisLeaderId : text
+    penaltyLeaderId : text
+    plusMinusLeaderID : text
+    faceoffsWonLeaderId : text
+    sogLeaderID : text
+    numShutouts : number
+    userID : text
+
+}
+
+entity "User用户" as e18 {
+   id : number
+   username : text
+   password : text
+}
+
+entity "UserScorePicks用户分数" as e19 {
+    id : text
+    hockeyGameID : text
+    team1Score : number
+    team2score : number
+    userID : text
+}
+
+entity "UserInfo用户信息" as e20 {
+    id :  text
+    firstName : text
+    lastName : text
+    email : text
+    round1Points: number
+    round2Points : number
+    round3Points : number
+    round4Points : number
+
+}
+
+
+
+
+e11 }|..|{ e17
+
+e14 }|..|{ e11
+e15 ||..|{ e16
+
+e18 }|..|| e20
+e18 |o..|{ e17
+e18 |o..|{ e19
+
+e12 }|..|{ e15
+e12 }|..|| e11
+e12 }|..|| e13
+e12 }|..|{ e19
+
+
+
+@enduml
