@@ -1,0 +1,86 @@
+@startuml
+title Thingboard架构图 https://thingsboard.io/docs/reference/msa/
+
+
+node "DevicesGroup" {
+      [device]
+}
+
+node "终端用户" {
+   [用户]
+}
+
+package "Haproxy" {
+   [Haproxy负载均衡]
+   [MQTT负载均衡]
+   [API负载均衡]
+   [静态网页负载均衡]
+}
+
+[device]<-->[Haproxy负载均衡]
+[device]<-->[MQTT负载均衡]
+ [用户] <--> [API负载均衡]
+ [用户] <--> [静态网页负载均衡]
+
+package "微服务" {
+
+node "Thingsboard Transport Microservices" {
+   [tb-http-transport]
+   [tb-http-transport]
+   [tb-mqtt-transport]
+   [tb-mqtt-transport]
+}
+
+
+node "Thingsboard Node Microservices" {
+   [tb-nodeA]<-> [tb-nodeB]
+
+}
+
+
+node "Thingsboard WebUI Microservices" {
+   [tb-web-ui]
+
+}
+
+}
+
+   [MQTT负载均衡] <--> [tb-nodeA]
+   [Haproxy负载均衡] <--> [tb-http-transport]
+   [API负载均衡] <-->  [tb-web-ui]
+   [静态网页负载均衡]
+
+package "Kafka组" {
+node "Kafka" {
+  [tb.transport.api topic]
+  [tb.rule.engine topic]
+  [js.eval topic]
+}
+
+node "zookeeper集群" {
+    [zookeeper]
+}
+
+node "redis集群" {
+   [redis]
+}
+
+node "数据库集群"{
+   [数据库]
+ }
+}
+
+package "Thingsboard JavaScript Executor Microservices" {
+[tb-javascript-exector]
+ note right: JS
+}
+
+[tb-http-transport] <--->[tb.transport.api topic]
+[tb-mqtt-transport] <--->[tb.rule.engine topic]
+[tb-nodeB]<--->[js.eval topic]
+[tb-nodeB]<---->[zookeeper]
+[tb-nodeB]<---->[redis]
+[tb-nodeB]<---->[数据库]
+
+[js.eval topic]<---->[tb-javascript-exector]
+@enduml
