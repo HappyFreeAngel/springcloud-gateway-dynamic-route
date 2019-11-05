@@ -1,0 +1,56 @@
+@startuml
+title 福州车辆仿真系统架构图
+
+cloud {
+   [互联网]
+}
+
+package "浏览器(客户端)" {
+     [websocket客户端]<-->[互联网]
+}
+
+
+node "呈现端服务" {
+  folder "Web服务器" {
+    frame "静态资源 VUE架构" {
+     [HTML]
+     [JavaScript]
+    }
+    frame "动态资源" {
+           [互联网] --> [动态资源]
+      }
+  }
+}
+
+node "基础服务层" {
+   [仿射变换服务]
+   [导航服务]
+}
+
+node "实时通讯能力层" {
+
+     [Websocket服务器]
+
+}
+
+node "业务规则层"  {
+ [车辆导航] --> [导航服务]
+ [车辆导航] --> [仿射变换服务]
+ [其他业务]
+}
+
+database "持久化层" {
+   frame "导航数据库" {
+   [导航数据表坐标]
+  }
+}
+
+[互联网] -->[HTML]
+[互联网] -->[JavaScript]
+[互联网] <-->[Websocket服务器]
+[Websocket服务器] <--> [车辆导航]
+
+[JavaScript] --> [车辆导航]
+[导航服务]-->[导航数据表坐标]
+
+@enduml
